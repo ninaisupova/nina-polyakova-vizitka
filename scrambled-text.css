@@ -1,0 +1,47 @@
+.scrambled-text {
+  position: relative;
+  max-width: 640px;
+  cursor: default;
+}
+
+.scrambled-text p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.5;
+  color: var(--text);
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.scrambled-text .char {
+  display: inline-block;
+  will-change: contents;
+  min-width: 0.02em;
+}
+
+.scrambled-text .char--accent {
+  color: var(--accent-bright);
+  font-style: italic;
+}
+
+.scrambled-text .char--space {
+  min-width: 0.28em;
+}
+
+.scrambled-text.is-scrambling .char--accent {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .scrambled-text p {
+    font-size: clamp(1.125rem, 4.5vw, 1.5rem);
+    line-height: 1.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrambled-text .char {
+    will-change: auto;
+  }
+}
